@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5ef">
+  <title>Chess vs. Python</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/game.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="brand-icon" aria-hidden="true">&#9822;&#xfe0e;</span>
+      <h1>Chess <span>vs. Python</span></h1>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="board-area" aria-label="Play chess">
+      <div class="player player-computer" id="computer">
+        <span class="avatar" aria-hidden="true">&#9822;&#xfe0e;</span>
+        <div><strong>Computer</strong><span class="player-color">Black</span></div>
+      </div>
+      <div class="board" id="board" role="group" aria-label="Chessboard, White at the bottom"></div>
+      <div class="player player-you" id="you">
+        <span class="avatar" aria-hidden="true">&#9822;&#xfe0e;</span>
+        <div><strong>You</strong><span class="player-color">White</span></div>
+      </div>
+    </section>
+
+    <aside class="game-panel" aria-label="Game information">
+      <div class="game-status" role="status" aria-atomic="true">
+        <h2 id="status">Loading game</h2>
+        <p id="hint">Setting up the board.</p>
+      </div>
+      <div class="history">
+        <h2>Moves</h2>
+        <div id="history-scroll" class="history-scroll">
+          <p id="empty-history">No moves yet.</p>
+          <table id="moves" aria-label="Move history" hidden>
+            <thead><tr><th scope="col">#</th><th scope="col">White</th><th scope="col">Black</th></tr></thead>
+            <tbody id="move-rows"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="game-actions">
+        <button id="new-game" class="primary-button" type="button">New game</button>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="promotion" aria-labelledby="promotion-title">
+    <h2 id="promotion-title">Promote your pawn</h2>
+    <form id="promotion-choices" method="dialog"></form>
+  </dialog>
+</body>
+</html>
